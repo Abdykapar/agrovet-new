@@ -6,29 +6,33 @@ const items = [
   {
     title: 'агрария',
     img: 'agraria.png',
+    link: '/agraria',
   },
   {
     title: 'Ветеринария',
     img: 'veterinaria.png',
+    link: '/veterinaria',
   },
   {
     title: 'Семена',
     img: 'semena.png',
+    link: '/semena',
   },
   {
     title: 'Удобрения',
     img: 'udobreniya.png',
+    link: '/udobreniya',
   },
 ]
 
 export default function Catalog() {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto' id='catalog'>
       <h2 className='sub-title mt-[140px] mb-[80px]'>Каталог продукции</h2>
 
       <div className='flex justify-between'>
         {items.map((i) => (
-          <CatalogItem key={i.title}>
+          <CatalogItem key={i.title} href={i.link}>
             <Image
               src={`/images/${i.img}`}
               alt={i.title}

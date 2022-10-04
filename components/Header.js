@@ -16,24 +16,24 @@ export default function Header() {
         </Logo>
         <Menu>
           <li>
-            <MenuItem href='#'>
+            <MenuItem href='#about-us'>
               <Info />О нас
             </MenuItem>
           </li>
           <li>
-            <MenuItem href='#'>
+            <MenuItem href='#catalog'>
               <FileList />
               Каталог продукции
             </MenuItem>
           </li>
           <li>
-            <MenuItem href='#'>
+            <MenuItem href='#locations'>
               <Location />
               Наши филиалы
             </MenuItem>
           </li>
           <li>
-            <MenuItem href='#'>
+            <MenuItem href='#contacts'>
               <Phone />
               Контакты
             </MenuItem>
@@ -56,7 +56,7 @@ const Logo = styled.a`
   align-items: center;
   margin-right: 20px;
 `
-const Title = styled.span`
+const Title = styled.h1`
   font-family: 'Avanti';
   font-weight: 700;
   font-size: 36px;

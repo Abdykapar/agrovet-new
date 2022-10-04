@@ -9,7 +9,7 @@ import 'swiper/css/pagination'
 
 export default function AboutUs() {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto' id='about-us'>
       <h2 className='sub-title mt-[70px] mb-[80px]'>о нас</h2>
       <Wrapper>
         <P>

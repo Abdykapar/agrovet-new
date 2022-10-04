@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export default function Contacts() {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto' id='contacts'>
       <h2 className='sub-title mt-[163px] mb-[74px]'>контакты</h2>
 
       <Wrapper>

@@ -28,22 +28,22 @@ export default function Footer() {
             </div>
             <List>
               <li>
-                <Item href='#'>
+                <Item href='#about-us'>
                   <Info /> О нас
                 </Item>
               </li>
               <li>
-                <Item href='#'>
+                <Item href='#catalog'>
                   <FileList /> Каталог продукции
                 </Item>
               </li>
               <li>
-                <Item href='#'>
+                <Item href='#locations'>
                   <Location /> Наши филиалы
                 </Item>
               </li>
               <li>
-                <Item href='#'>
+                <Item href='#contacts'>
                   <Phone /> Контакты
                 </Item>
               </li>

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Avanti';
+  src: url('/fonts/avanti.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Avanti';
+  src: url('/fonts/avanti-bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat';
+}
+
+@import './common.scss';

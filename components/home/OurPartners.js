@@ -8,7 +8,7 @@ import 'swiper/css/pagination'
 
 export default function OurPartners() {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto px-5'>
       <h2 className='sub-title mt-[168px] mb-[80px]'>наши партнеры</h2>
 
       <div className='partners'>

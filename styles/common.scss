@@ -4,12 +4,22 @@
   line-height: 29px;
   text-transform: uppercase;
   color: #146c4a;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 22px;
+    line-height: 27px;
+  }
 }
 
 .container .swiper {
   margin-left: 50px;
   margin-top: -50px;
   padding: 70px 0 70px;
+
+  @media screen and (max-width: 1023px) {
+    margin-left: 0;
+    margin-top: 0px;
+  }
 
   .swiper-pagination {
     width: 305px;
@@ -20,11 +30,19 @@
     align-items: center;
     margin-left: 50%;
     transform: translateX(-50%);
+
+    @media screen and (max-width: 1023px) {
+      height: 5px;
+    }
   }
 
   .swiper-pagination-bullet {
     height: 8px;
     background: #d9d9d9;
+
+    @media screen and (max-width: 1023px) {
+      height: 5px;
+    }
   }
 
   .swiper-pagination-bullet-active {
@@ -32,6 +50,11 @@
     height: 10px;
     background: #146c4a;
     border-radius: 0;
+
+    @media screen and (max-width: 1023px) {
+      height: 5px;
+      width: 39px;
+    }
   }
 
   .swiper-button-prev,
@@ -42,16 +65,29 @@
     height: 70px;
     background-color: #146c4a;
 
+    @media screen and (max-width: 1023px) {
+      width: 37px;
+      height: 37px;
+    }
+
     &::after {
       content: '';
     }
   }
   .swiper-button-next {
     background-image: url('/icons/next.svg');
+
+    @media screen and (max-width: 1023px) {
+      background-image: url('/icons/next-small.svg');
+    }
   }
 
   .swiper-button-prev {
     background-image: url('/icons/prev.svg');
+
+    @media screen and (max-width: 1023px) {
+      background-image: url('/icons/prev-small.svg');
+    }
   }
 
   .swiper-slide {

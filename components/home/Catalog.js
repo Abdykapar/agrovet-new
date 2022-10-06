@@ -27,22 +27,19 @@ const items = [
 
 export default function Catalog() {
   return (
-    <div className='container mx-auto' id='catalog'>
-      <h2 className='sub-title mt-[140px] mb-[80px]'>Каталог продукции</h2>
+    <div className='container mx-auto px-5' id='catalog'>
+      <h2 className='sub-title mt-[50px] mb-[30px] lg:mt-[140px] lg:mb-[80px]'>
+        Каталог продукции
+      </h2>
 
-      <div className='flex justify-between'>
+      <CatalogWrapper>
         {items.map((i) => (
           <CatalogItem key={i.title} href={i.link}>
-            <Image
-              src={`/images/${i.img}`}
-              alt={i.title}
-              width='263px'
-              height={295}
-            />
+            <Img src={`/images/${i.img}`} alt={i.title} />
             <P>{i.title}</P>
           </CatalogItem>
         ))}
-      </div>
+      </CatalogWrapper>
     </div>
   )
 }
@@ -57,4 +54,27 @@ const P = styled.p`
   color: #146c4a;
   margin: 25px 0 0;
   padding: 0;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 8px;
+  }
+`
+
+const Img = styled.img`
+  @media screen and (max-width: 1023px) {
+    width: 146px;
+    height: 164px;
+  }
+`
+
+const CatalogWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media screen and (max-width: 1023px) {
+    flex-wrap: wrap;
+  }
 `

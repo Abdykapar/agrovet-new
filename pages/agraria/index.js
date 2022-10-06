@@ -31,13 +31,15 @@ export default function index() {
   return (
     <>
       <Header />
-      <div className='container mx-auto'>
-        <h2 className='sub-title mt-[116px] mb-[80px]'>агрария</h2>
+      <div className='container mx-auto px-5'>
+        <h2 className='sub-title mt-[50px] mb-[30px] lg:mt-[116px] lg:mb-[80px]'>
+          агрария
+        </h2>
 
         <Wrapper>
           {items.map((i) => (
             <Item key={i.title} href={i.link}>
-              <Image src={`/images/${i.img}`} width={263} height={295} />
+              <Img src={`/images/${i.img}`} width={263} height={295} />
               <P>{i.title}</P>
             </Item>
           ))}
@@ -53,6 +55,14 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 76px;
   margin-bottom: 225px;
+
+  @media screen and (max-width: 1023px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
 `
 const P = styled.p`
   font-weight: 700;
@@ -61,6 +71,18 @@ const P = styled.p`
   text-align: center;
   color: #146c4a;
   margin-top: 15px;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 8px;
+  }
+`
+const Img = styled.img`
+  @media screen and (max-width: 1023px) {
+    width: 146px;
+    height: 164px;
+  }
 `
 
 const Item = styled.a``

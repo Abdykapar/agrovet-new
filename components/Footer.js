@@ -14,36 +14,62 @@ export default function Footer() {
     <div>
       <WrapperTop>
         <div className='container mx-auto'>
-          <div className='flex'>
-            <div>
-              <P>мы в соцсетях</P>
-              <SocialWrapper>
-                <Instagram />
-                <Youtube />
-                <Facebook />
-                <Tiktok />
-              </SocialWrapper>
-              <P className='mt-[20px]'>горячая линия</P>
-              <P>+996 776 30 99 55</P>
+          <div className='flex md:flex-row'>
+            <div className='flex flex-col-reverse md:flex-col'>
+              <div className='mt-[46px] md:mt-0'>
+                <P>мы в соцсетях</P>
+                <SocialWrapper>
+                  <Social href='#'>
+                    <Box>
+                      <Instagram />
+                    </Box>
+                    <Label>agrovetasia_kg</Label>
+                  </Social>
+                  <Social href='#'>
+                    <Box>
+                      <Youtube />
+                    </Box>
+                    <Label>agrovetasia KG</Label>
+                  </Social>
+                  <Social href='#'>
+                    <Box>
+                      <Facebook />
+                    </Box>
+                    <Label>agrovetasia</Label>
+                  </Social>
+                  <Social href='#'>
+                    <Box>
+                      <Tiktok />
+                    </Box>
+                    <Label>agrovetasia_kgz</Label>
+                  </Social>
+                </SocialWrapper>
+              </div>
+              <div>
+                <P className='mt-[20px]'>горячая линия</P>
+                <P>
+                  <a href='tel:+996776309955'>+996 776 30 99 55</a>
+                </P>
+              </div>
             </div>
             <List>
               <li>
-                <Item href='#about-us'>
+                <Item href='/#about-us'>
                   <Info /> О нас
                 </Item>
               </li>
               <li>
-                <Item href='#catalog'>
+                <Item href='/#catalog'>
                   <FileList /> Каталог продукции
                 </Item>
               </li>
               <li>
-                <Item href='#locations'>
+                <Item href='/#locations'>
                   <Location /> Наши филиалы
                 </Item>
               </li>
               <li>
-                <Item href='#contacts'>
+                <Item href='/#contacts'>
                   <Phone /> Контакты
                 </Item>
               </li>
@@ -59,10 +85,11 @@ export default function Footer() {
 }
 
 const WrapperTop = styled.div`
-  height: 269px;
+  min-height: 269px;
   background: #146c4a;
   display: flex;
   align-items: center;
+  padding: 40px 20px;
 `
 
 const P = styled.p`
@@ -72,6 +99,11 @@ const P = styled.p`
   text-transform: uppercase;
   color: #ffffff;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 22px;
+    line-height: 27px;
+  }
 `
 
 const SocialWrapper = styled.div`
@@ -79,11 +111,52 @@ const SocialWrapper = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   width: 165px;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
 `
 const List = styled.ul`
   display: grid;
   row-gap: 20px;
   margin-left: 141px;
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
+    display: none;
+  }
+`
+
+const Box = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 767px) {
+    width: 50px;
+  }
+`
+
+const Social = styled.a`
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: lowercase;
+  color: #ffffff;
+
+  svg {
+    @media screen and (max-width: 767px) {
+      margin-right: 10px;
+    }
+  }
+`
+
+const Label = styled.span`
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: inline-block;
+  }
 `
 
 const Item = styled.a`

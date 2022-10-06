@@ -9,8 +9,10 @@ import 'swiper/css/pagination'
 
 export default function AboutUs() {
   return (
-    <div className='container mx-auto' id='about-us'>
-      <h2 className='sub-title mt-[70px] mb-[80px]'>о нас</h2>
+    <div className='container mx-auto px-5' id='about-us'>
+      <h2 className='sub-title mt-[50px] mb-[30px] lg:mt-[70px] lg:mb-[80px]'>
+        о нас
+      </h2>
       <Wrapper>
         <P>
           Компания ОсОО Агроветазия основана в 2014 году и в настоящее время
@@ -42,16 +44,16 @@ export default function AboutUs() {
             centeredSlides={true}
             slidesPerView={1}
             loop={true}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 3500,
+            //   disableOnInteraction: false,
+            // }}
           >
             <SwiperSlide>
-              <img src='/images/home-slider.png' />
+              <Img src='/images/home-slider.png' />
             </SwiperSlide>
             <SwiperSlide>
-              <img src='/images/home-slider.png' />
+              <Img src='/images/home-slider.png' />
             </SwiperSlide>
           </Swiper>
         </div>
@@ -65,8 +67,25 @@ const P = styled.p`
   font-size: 14px;
   line-height: 22px;
   color: #212121;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 12px;
+    line-height: 155.9%;
+  }
 `
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 50%;
+
+  @media screen and (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+  }
+`
+
+const Img = styled.img`
+  @media screen and (max-width: 1023px) {
+    width: 199px;
+    height: 150px;
+  }
 `

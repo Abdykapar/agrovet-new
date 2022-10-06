@@ -3,8 +3,10 @@ import styled from 'styled-components'
 
 export default function Contacts() {
   return (
-    <div className='container mx-auto' id='contacts'>
-      <h2 className='sub-title mt-[163px] mb-[74px]'>контакты</h2>
+    <div className='container mx-auto px-5' id='contacts'>
+      <h2 className='sub-title mt-[50px] mb-[30px] lg:mt-[163px] lg:mb-[74px]'>
+        контакты
+      </h2>
 
       <Wrapper>
         <Item>
@@ -153,6 +155,12 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   margin-bottom: 163px;
+
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
 `
 
 const Item = styled.div`
@@ -160,6 +168,11 @@ const Item = styled.div`
   border: 0.5px solid #d9d9d9;
   display: grid;
   grid-template-columns: 144px auto;
+
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: 78px auto;
+    padding: 19px;
+  }
 `
 
 const Profile = styled.div`
@@ -171,6 +184,11 @@ const Info = styled.div`
   display: grid;
   row-gap: 25px;
   margin-left: 28px;
+
+  @media screen and (max-width: 1023px) {
+    row-gap: 5px;
+    margin-left: 8px;
+  }
 `
 
 const Bold = styled.p`
@@ -180,6 +198,11 @@ const Bold = styled.p`
   text-transform: capitalize;
   color: #146c4a;
   margin-bottom: 5px;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 12px;
+    line-height: 15px;
+  }
 `
 
 const P = styled.p`
@@ -187,4 +210,9 @@ const P = styled.p`
   font-size: 14px;
   line-height: 17px;
   color: #000000;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 8px;
+    line-height: 10px;
+  }
 `

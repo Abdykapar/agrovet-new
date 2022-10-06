@@ -9,13 +9,13 @@ export default function agrariaItem() {
   return (
     <>
       <Header />
-      <div className='container mx-auto'>
-        <h2 className='sub-title mt-[117px] mb-[80px]'>
+      <div className='container mx-auto px-5'>
+        <h2 className='sub-title mt-[50px] mb-[30px] lg:mt-[117px] lg:mb-[80px]'>
           агрария- ГЕРБИЦИДЫ- гезигард азия
         </h2>
 
         <Wrapper>
-          <Image src={`/images/gerb.png`} width={433} height={433} />
+          <Img src={`/images/gerb.png`} />
           <Info>
             <div>
               <Title>Гезигард азия</Title>
@@ -35,14 +35,17 @@ export default function agrariaItem() {
               </InfoWrapper>
             </div>
             <Button>
-              <Whatsapp />
+              {/* <Whatsapp /> */}
+              <img src='/icons/whatsapp.svg' />
               Получить консультацию
             </Button>
           </Info>
         </Wrapper>
 
         <WrapperDesc>
-          <h2 className='sub-title mt-[80px] mb-[34px]'>описание</h2>
+          <h2 className='sub-title mt-[60px] mb-[30px] lg:mt-[80px] lg:mb-[34px]'>
+            описание
+          </h2>
 
           <p>
             Разнообразный и богатый опыт дальнейшее развитие различных форм
@@ -71,6 +74,17 @@ export default function agrariaItem() {
 
 const Wrapper = styled.div`
   display: flex;
+
+  @media screen and (max-width: 1023px) {
+    flex-direction: column;
+  }
+`
+
+const Img = styled.img`
+  @media screen and (max-width: 1023px) {
+    width: 335px;
+    margin-bottom: 30px;
+  }
 `
 
 const Info = styled.div`
@@ -78,6 +92,10 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 1023px) {
+    margin-left: 0px;
+  }
 `
 
 const Title = styled.h3`
@@ -92,6 +110,10 @@ const Title = styled.h3`
 const InfoWrapper = styled.div`
   display: grid;
   row-gap: 20px;
+
+  @media screen and (max-width: 1023px) {
+    row-gap: 15px;
+  }
 `
 
 const InfoItem = styled.p`
@@ -100,12 +122,22 @@ const InfoItem = styled.p`
   line-height: 22px;
   color: #146c4a;
   margin-right: 15px;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 12px;
+    line-height: 15px;
+  }
 `
 const InfoDesc = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
   color: #212121;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 12px;
+    line-height: 155.9%;
+  }
 `
 
 const Button = styled.button`
@@ -121,15 +153,33 @@ const Button = styled.button`
   justify-content: center;
   transition: all 300ms ease-in-out;
 
+  @media screen and (max-width: 1023px) {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 17px;
+    height: 58px;
+    width: 335px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
   &:hover {
     opacity: 0.8;
   }
 
-  svg {
+  img {
     margin-right: 14px;
   }
 `
 
 const WrapperDesc = styled.div`
   margin-bottom: 100px;
+
+  @media screen and (max-width: 1023px) {
+    margin-bottom: 50px;
+  }
 `

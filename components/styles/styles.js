@@ -6,7 +6,7 @@ export const ImgWrapper = styled.div`
   position: relative;
   overflow: hidden;
   @media screen and (max-width: 1023px) {
-    width: 146px;
-    height: 164px;
+    width: 160px;
+    height: 180px;
   }
 `

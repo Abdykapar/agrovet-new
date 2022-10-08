@@ -185,13 +185,13 @@ const Title = styled.h1`
 
 const BurgerMenuWrapper = styled.div`
   position: fixed;
-  top: -475px;
-  right: 0;
+  top: 0;
+  right: -100%;
   width: 375px;
   background: #146c4a;
   z-index: -1;
   display: none;
-  transition: top 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 
   .burger-link {
     transition: all 300ms ease-in-out;
@@ -207,7 +207,7 @@ const BurgerMenuWrapper = styled.div`
     width: 100%;
     display: block;
 
-    ${({ active }) => (active ? 'top: 0px;' : '')}
+    ${({ active }) => (active ? 'right: 0px;' : '')}
   }
 
   ul {

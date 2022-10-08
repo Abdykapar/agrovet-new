@@ -14,35 +14,35 @@ export default function AgrariaById() {
         </h2>
 
         <Wrapper>
-          <Item href='#'>
+          <Item href='/agraria/1/id'>
             <Img src={`/images/gerb.png`} />
             <P>Гезигард Азия</P>
             <Def>ДВ: Прометрина 500г/л</Def>
             <Def>Прометрина 500г/л</Def>
             <Def>Прометрина 500г/л</Def>
           </Item>
-          <Item href='#'>
+          <Item href='/agraria/1/id'>
             <Img src={`/images/gerb.png`} />
             <P>Гезигард Азия</P>
             <Def>ДВ: Прометрина 500г/л</Def>
             <Def>Прометрина 500г/л</Def>
             <Def>Прометрина 500г/л</Def>
           </Item>
-          <Item href='#'>
+          <Item href='/agraria/1/id'>
             <Img src={`/images/gerb.png`} />
             <P>Гезигард Азия</P>
             <Def>ДВ: Прометрина 500г/л</Def>
             <Def>Прометрина 500г/л</Def>
             <Def>Прометрина 500г/л</Def>
           </Item>
-          <Item href='#'>
+          <Item href='/agraria/1/id'>
             <Img src={`/images/gerb.png`} />
             <P>Гезигард Азия</P>
             <Def>ДВ: Прометрина 500г/л</Def>
             <Def>Прометрина 500г/л</Def>
             <Def>Прометрина 500г/л</Def>
           </Item>
-          <Item href='#'>
+          <Item href='/agraria/1/id'>
             <Img src={`/images/gerb.png`} />
             <P>Гезигард Азия</P>
             <Def>ДВ: Прометрина 500г/л</Def>

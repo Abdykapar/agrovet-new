@@ -9,22 +9,22 @@ const items = [
   {
     title: 'Гербициды',
     img: 'gerbitsidy.png',
-    link: '#',
+    link: '/agraria/1',
   },
   {
     title: 'Инсектициды',
     img: 'insektitsidy.png',
-    link: '#',
+    link: '/agraria/1',
   },
   {
     title: 'Фунгициды',
     img: 'fungitsidy.png',
-    link: '#',
+    link: '/agraria/1',
   },
   {
     title: 'Акарициды',
     img: 'akaritsidy.png',
-    link: '#',
+    link: '/agraria/1',
   },
 ]
 

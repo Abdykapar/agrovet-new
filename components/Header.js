@@ -10,6 +10,7 @@ import Instagram from '../public/icons/instagram.svg'
 import Youtube from '../public/icons/youtube.svg'
 import Facebook from '../public/icons/facebook.svg'
 import Tiktok from '../public/icons/tiktok.svg'
+import Link from 'next/link'
 
 export default function Header() {
   const [isBurgerHide, setIsBurgerHide] = useState(true)
@@ -59,9 +60,9 @@ export default function Header() {
       <BurgerMenuWrapper active={!isBurgerHide}>
         <ul>
           <li>
-            <a className='burger-link' href='#'>
-              Агрария
-            </a>
+            <Link href='/agraria'>
+              <a className='burger-link'>Агрария</a>
+            </Link>
           </li>
           <li>
             <a className='burger-link' href='#'>

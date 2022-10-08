@@ -59,16 +59,24 @@ export default function Header() {
       <BurgerMenuWrapper active={!isBurgerHide}>
         <ul>
           <li>
-            <a href='#'>Агрария</a>
+            <a className='burger-link' href='#'>
+              Агрария
+            </a>
           </li>
           <li>
-            <a href='#'>ветеринария</a>
+            <a className='burger-link' href='#'>
+              ветеринария
+            </a>
           </li>
           <li>
-            <a href='#'>семена</a>
+            <a className='burger-link' href='#'>
+              семена
+            </a>
           </li>
           <li>
-            <a href='#'>удобрения</a>
+            <a className='burger-link' href='#'>
+              удобрения
+            </a>
           </li>
         </ul>
         <SocialWrapper>
@@ -143,6 +151,12 @@ const SocialWrapper = styled.div`
   list-style: none;
   padding: 17px 20px;
   background: #212121;
+
+  a {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 `
 
 const Logo = styled.a`
@@ -178,6 +192,16 @@ const BurgerMenuWrapper = styled.div`
   display: none;
   transition: top 300ms ease-in-out;
 
+  .burger-link {
+    transition: all 300ms ease-in-out;
+    padding: 10px;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: #1d875e;
+    }
+  }
+
   @media screen and (max-width: 1023px) {
     width: 100%;
     display: block;
@@ -203,7 +227,7 @@ const BurgerMenuWrapper = styled.div`
 const Menu = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, auto);
-  column-gap: 44px;
+  column-gap: 24px;
 
   @media screen and (max-width: 1100px) {
     grid-template-columns: repeat(2, auto);
@@ -230,9 +254,11 @@ const MenuItem = styled.a`
   align-items: center;
   transition: all 300ms ease-in-out;
   gap: 10px;
+  border-radius: 6px;
+  padding: 10px;
 
   &:hover {
-    opacity: 0.8;
+    background-color: #f6f6f6;
   }
 `
 
@@ -240,6 +266,10 @@ const Burger = styled.button`
   display: none;
   border: none;
   background: inherit;
+
+  svg path {
+    transition: all 300ms ease-in-out;
+  }
 
   ${({ active }) => (active ? `svg path { fill: #fff; }` : '')}
 

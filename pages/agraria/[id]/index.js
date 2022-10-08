@@ -72,6 +72,7 @@ const Wrapper = styled.div`
 `
 
 const Img = styled.img`
+  transition: all 300ms ease-in-out;
   @media screen and (max-width: 1023px) {
     width: 159px;
     height: 159px;
@@ -94,7 +95,13 @@ const P = styled.p`
   }
 `
 
-const Item = styled.a``
+const Item = styled.a`
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
+`
 
 const Def = styled.p`
   font-weight: 400;

@@ -100,6 +100,14 @@ const P = styled.p`
   color: #ffffff;
   margin-bottom: 20px;
 
+  a {
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   @media screen and (max-width: 767px) {
     font-size: 22px;
     line-height: 27px;
@@ -119,7 +127,7 @@ const SocialWrapper = styled.div`
 `
 const List = styled.ul`
   display: grid;
-  row-gap: 20px;
+  row-gap: 0px;
   margin-left: 141px;
 
   @media screen and (max-width: 767px) {
@@ -144,6 +152,11 @@ const Social = styled.a`
   line-height: 17px;
   text-transform: lowercase;
   color: #ffffff;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   svg {
     @media screen and (max-width: 767px) {
@@ -167,6 +180,13 @@ const Item = styled.a`
   line-height: 22px;
   text-transform: uppercase;
   color: #ffffff;
+  transition: all 300ms ease-in-out;
+  border-radius: 6px;
+  padding: 10px;
+
+  &:hover {
+    background-color: #1d875e;
+  }
 
   svg {
     margin-right: 10px;

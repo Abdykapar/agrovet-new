@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
+import { ImgWrapper } from '../styles/styles'
 
 const items = [
   {
@@ -35,7 +36,9 @@ export default function Catalog() {
       <CatalogWrapper>
         {items.map((i) => (
           <CatalogItem key={i.title} href={i.link}>
-            <Img src={`/images/${i.img}`} alt={i.title} />
+            <ImgWrapper>
+              <Img src={`/images/${i.img}`} alt={i.title} />
+            </ImgWrapper>
             <P>{i.title}</P>
           </CatalogItem>
         ))}
@@ -44,7 +47,14 @@ export default function Catalog() {
   )
 }
 
-const CatalogItem = styled.a``
+const CatalogItem = styled.a`
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+`
+
 const P = styled.p`
   font-weight: 700;
   font-size: 18px;
@@ -63,10 +73,9 @@ const P = styled.p`
 `
 
 const Img = styled.img`
-  @media screen and (max-width: 1023px) {
-    width: 146px;
-    height: 164px;
-  }
+  max-width: 100%;
+  height: auto;
+  transition: all 300ms ease-in-out;
 `
 
 const CatalogWrapper = styled.div`
@@ -74,7 +83,7 @@ const CatalogWrapper = styled.div`
   justify-content: space-between;
   gap: 20px;
 
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 1279px) {
     flex-wrap: wrap;
   }
 `

@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import { ImgWrapper } from '@/components/styles/styles'
 import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
@@ -39,7 +40,9 @@ export default function index() {
         <Wrapper>
           {items.map((i) => (
             <Item key={i.title} href={i.link}>
-              <Img src={`/images/${i.img}`} width={263} height={295} />
+              <ImgWrapper>
+                <Img src={`/images/${i.img}`} width={263} height={295} />
+              </ImgWrapper>
               <P>{i.title}</P>
             </Item>
           ))}
@@ -56,7 +59,11 @@ const Wrapper = styled.div`
   gap: 76px;
   margin-bottom: 225px;
 
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 1279px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -79,10 +86,15 @@ const P = styled.p`
   }
 `
 const Img = styled.img`
-  @media screen and (max-width: 1023px) {
-    width: 146px;
-    height: 164px;
-  }
+  max-width: 100%;
+  height: auto;
+  transition: all 300ms ease-in-out;
 `
 
-const Item = styled.a``
+const Item = styled.a`
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+`

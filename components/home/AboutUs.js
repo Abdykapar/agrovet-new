@@ -44,10 +44,10 @@ export default function AboutUs() {
             centeredSlides={true}
             slidesPerView={1}
             loop={true}
-            // autoplay={{
-            //   delay: 3500,
-            //   disableOnInteraction: false,
-            // }}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
           >
             <SwiperSlide>
               <Img src='/images/home-slider.png' />

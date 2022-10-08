@@ -64,6 +64,11 @@
     width: 70px;
     height: 70px;
     background-color: #146c4a;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
 
     @media screen and (max-width: 1023px) {
       width: 37px;
@@ -99,6 +104,7 @@
 .partners {
   position: relative;
   margin-left: 50px;
+  margin-right: 50px;
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -108,6 +114,17 @@
     height: 70px;
     background-color: #146c4a;
 
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 37px;
+      height: 37px;
+    }
+
     &::after {
       content: '';
     }
@@ -115,19 +132,38 @@
   .swiper-button-next {
     background-image: url('/icons/next.svg');
     right: -40px;
+
+    @media screen and (max-width: 1023px) {
+      background-image: url('/icons/next-small.svg');
+    }
   }
 
   .swiper-button-prev {
     background-image: url('/icons/prev.svg');
     left: -50px;
+
+    @media screen and (max-width: 1023px) {
+      background-image: url('/icons/prev-small.svg');
+    }
   }
 }
 
 .partners .swiper {
   margin-left: 70px;
   margin-right: 70px;
+
+  @media screen and (max-width: 1023px) {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
   .swiper-pagination {
     width: 723px;
     height: 10px;
+
+    @media screen and (max-width: 1023px) {
+      height: 5px;
+    }
   }
 }

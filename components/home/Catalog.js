@@ -26,7 +26,7 @@ const items = [
   },
 ]
 
-export default function Catalog() {
+export default function Catalog({ data }) {
   return (
     <div className='container mx-auto px-5' id='catalog'>
       <h2 className='sub-title mt-[50px] mb-[30px] lg:mt-[140px] lg:mb-[80px]'>
@@ -34,10 +34,10 @@ export default function Catalog() {
       </h2>
 
       <CatalogWrapper>
-        {items.map((i) => (
-          <CatalogItem key={i.title} href={i.link}>
+        {data.map((i) => (
+          <CatalogItem key={i.title} href={`/${i.title}`}>
             <ImgWrapper>
-              <Img src={`/images/${i.img}`} alt={i.title} />
+              <Img src={`${i.image}`} alt={i.title} />
             </ImgWrapper>
             <P>{i.title}</P>
           </CatalogItem>

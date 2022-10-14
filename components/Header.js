@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Info from '../public/icons/info.svg'
@@ -12,7 +11,7 @@ import Facebook from '../public/icons/facebook.svg'
 import Tiktok from '../public/icons/tiktok.svg'
 import Link from 'next/link'
 
-export default function Header() {
+export default function Header({ data }) {
   const [isBurgerHide, setIsBurgerHide] = useState(true)
 
   return (
@@ -59,40 +58,39 @@ export default function Header() {
       <ExtraSpace active={!isBurgerHide} />
       <BurgerMenuWrapper active={!isBurgerHide}>
         <ul>
-          <li>
-            <Link href='/agraria'>
-              <a className='burger-link'>Агрария</a>
-            </Link>
-          </li>
-          <li>
-            <a className='burger-link' href='#'>
-              ветеринария
-            </a>
-          </li>
-          <li>
-            <a className='burger-link' href='#'>
-              семена
-            </a>
-          </li>
-          <li>
-            <a className='burger-link' href='#'>
-              удобрения
-            </a>
-          </li>
+          {data.map((i) => (
+            <li key={i._id}>
+              <Link href={`/${i.title}`}>
+                <a className='burger-link'>{i.title}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
         <SocialWrapper>
           <li>
-            <a href='#'>
+            <a
+              href='https://www.instagram.com/agrovetasia_kg/'
+              target='_blank'
+              rel='noreferrer'
+            >
               <Instagram />
             </a>
           </li>
           <li>
-            <a href='#'>
+            <a
+              href='https://www.youtube.com/channel/UCRtOQpu7FCHIYpsZYewl7JA'
+              target='_blank'
+              rel='noreferrer'
+            >
               <Youtube />
             </a>
           </li>
           <li>
-            <a href='#'>
+            <a
+              href='https://www.facebook.com/agrovetaziakg'
+              target='_blank'
+              rel='noreferrer'
+            >
               <Facebook />
             </a>
           </li>

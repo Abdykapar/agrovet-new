@@ -19,19 +19,31 @@ export default function Footer() {
               <div className='mt-[46px] md:mt-0'>
                 <P>мы в соцсетях</P>
                 <SocialWrapper>
-                  <Social href='#'>
+                  <Social
+                    href='https://www.instagram.com/agrovetasia_kg/'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                     <Box>
                       <Instagram />
                     </Box>
                     <Label>agrovetasia_kg</Label>
                   </Social>
-                  <Social href='#'>
+                  <Social
+                    href='https://www.youtube.com/channel/UCRtOQpu7FCHIYpsZYewl7JA'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                     <Box>
                       <Youtube />
                     </Box>
                     <Label>agrovetasia KG</Label>
                   </Social>
-                  <Social href='#'>
+                  <Social
+                    href='https://www.facebook.com/agrovetaziakg'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                     <Box>
                       <Facebook />
                     </Box>

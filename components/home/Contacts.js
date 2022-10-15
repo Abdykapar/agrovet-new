@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Contacts() {
+export default function Contacts({ data }) {
   return (
     <div className='container mx-auto px-5' id='contacts'>
       <h2 className='sub-title mt-[50px] mb-[30px] lg:mt-[163px] lg:mb-[74px]'>
@@ -9,142 +9,25 @@ export default function Contacts() {
       </h2>
 
       <Wrapper>
-        <Item>
-          <Profile />
-          <Info>
-            <div>
-              <Bold>Абдивалиев алмазбек калмаматович</Bold>
-              <P>Генеральный директор ОсОО “Агроветазия”</P>
-            </div>
-            <div>
-              <Bold>Регион</Bold>
-              <P>Бишкек, Кыргызстан</P>
-            </div>
-            <div>
-              <Bold>Контакты</Bold>
-              <P>+996 708 31 55 83</P>
-            </div>
-          </Info>
-        </Item>
-        <Item>
-          <Profile />
-          <Info>
-            <div>
-              <Bold>Абдивалиев алмазбек калмаматович</Bold>
-              <P>Генеральный директор ОсОО “Агроветазия”</P>
-            </div>
-            <div>
-              <Bold>Регион</Bold>
-              <P>Бишкек, Кыргызстан</P>
-            </div>
-            <div>
-              <Bold>Контакты</Bold>
-              <P>+996 708 31 55 83</P>
-            </div>
-          </Info>
-        </Item>
-        <Item>
-          <Profile />
-          <Info>
-            <div>
-              <Bold>Абдивалиев алмазбек калмаматович</Bold>
-              <P>Генеральный директор ОсОО “Агроветазия”</P>
-            </div>
-            <div>
-              <Bold>Регион</Bold>
-              <P>Бишкек, Кыргызстан</P>
-            </div>
-            <div>
-              <Bold>Контакты</Bold>
-              <P>+996 708 31 55 83</P>
-            </div>
-          </Info>
-        </Item>
-        <Item>
-          <Profile />
-          <Info>
-            <div>
-              <Bold>Абдивалиев алмазбек калмаматович</Bold>
-              <P>Генеральный директор ОсОО “Агроветазия”</P>
-            </div>
-            <div>
-              <Bold>Регион</Bold>
-              <P>Бишкек, Кыргызстан</P>
-            </div>
-            <div>
-              <Bold>Контакты</Bold>
-              <P>+996 708 31 55 83</P>
-            </div>
-          </Info>
-        </Item>
-        <Item>
-          <Profile />
-          <Info>
-            <div>
-              <Bold>Абдивалиев алмазбек калмаматович</Bold>
-              <P>Генеральный директор ОсОО “Агроветазия”</P>
-            </div>
-            <div>
-              <Bold>Регион</Bold>
-              <P>Бишкек, Кыргызстан</P>
-            </div>
-            <div>
-              <Bold>Контакты</Bold>
-              <P>+996 708 31 55 83</P>
-            </div>
-          </Info>
-        </Item>
-        <Item>
-          <Profile />
-          <Info>
-            <div>
-              <Bold>Абдивалиев алмазбек калмаматович</Bold>
-              <P>Генеральный директор ОсОО “Агроветазия”</P>
-            </div>
-            <div>
-              <Bold>Регион</Bold>
-              <P>Бишкек, Кыргызстан</P>
-            </div>
-            <div>
-              <Bold>Контакты</Bold>
-              <P>+996 708 31 55 83</P>
-            </div>
-          </Info>
-        </Item>
-        <Item>
-          <Profile />
-          <Info>
-            <div>
-              <Bold>Абдивалиев алмазбек калмаматович</Bold>
-              <P>Генеральный директор ОсОО “Агроветазия”</P>
-            </div>
-            <div>
-              <Bold>Регион</Bold>
-              <P>Бишкек, Кыргызстан</P>
-            </div>
-            <div>
-              <Bold>Контакты</Bold>
-              <P>+996 708 31 55 83</P>
-            </div>
-          </Info>
-        </Item>
-        <Item>
-          <Profile />
-          <Info>
-            <div>
-              <Bold>Абдивалиев алмазбек калмаматович</Bold>
-              <P>Генеральный директор ОсОО “Агроветазия”</P>
-            </div>
-            <div>
-              <Bold>Регион</Bold>
-              <P>Бишкек, Кыргызстан</P>
-            </div>
-            <div>
-              <Bold>Контакты</Bold>
-              <P>+996 708 31 55 83</P>
-            </div>
-          </Info>
-        </Item>
+        {data.map((i) => (
+          <Item key={i._id}>
+            <Profile image={i.image} />
+            <Info>
+              <div>
+                <Bold>{i.owner}</Bold>
+                <P>{i.position}</P>
+              </div>
+              <div>
+                <Bold>Регион</Bold>
+                <P>{i.region}</P>
+              </div>
+              <div>
+                <Bold>Контакты</Bold>
+                <P>{i.phones.map((i) => i.name).join(', ')}</P>
+              </div>
+            </Info>
+          </Item>
+        ))}
       </Wrapper>
     </div>
   )
@@ -178,6 +61,8 @@ const Item = styled.div`
 const Profile = styled.div`
   height: 100%;
   background: #146c4a;
+  ${({ image }) => image && `background-image: url('${image}');`}
+  background-size: cover;
 `
 
 const Info = styled.div`

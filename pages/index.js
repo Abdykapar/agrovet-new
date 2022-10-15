@@ -6,10 +6,11 @@ import MainSection from '@/components/home/MainSection'
 import OurLocations from '@/components/home/OurLocations'
 import OurPartners from '@/components/home/OurPartners'
 import { getImageUrl } from 'helpers/helpers'
+import { getAddresses } from 'services/address.service'
 import { getParentCategories } from 'services/categories.service'
 import Header from '../components/Header'
 
-export default function Home({ data, error }) {
+export default function Home({ data, contacts, error }) {
   return (
     <div>
       <Header data={data} />
@@ -18,20 +19,24 @@ export default function Home({ data, error }) {
       <Catalog data={data} />
       <OurPartners />
       <OurLocations />
-      <Contacts />
+      <Contacts data={contacts} />
       <Footer />
     </div>
   )
 }
 
 export async function getServerSideProps() {
-  let data = []
+  let data = [],
+    contacts = []
   try {
-    data = await getParentCategories()
+    const res = await Promise.all([getParentCategories(), getAddresses()])
+    data = res[0]
+    contacts = res[1]
   } catch (err) {
     return {
       props: {
         data: [],
+        contacts,
       },
       error: err,
     }
@@ -39,6 +44,10 @@ export async function getServerSideProps() {
   return {
     props: {
       data: data.map((i) => ({
+        ...i,
+        image: getImageUrl(i.image),
+      })),
+      contacts: contacts.map((i) => ({
         ...i,
         image: getImageUrl(i.image),
       })),

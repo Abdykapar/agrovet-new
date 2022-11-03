@@ -36,8 +36,6 @@ export default function AboutUs() {
 
         <div>
           <Swiper
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
             modules={[Navigation, Pagination, Autoplay]}
             navigation={true}
             pagination={true}

@@ -9,3 +9,7 @@ export function getProducts(params) {
 export function getProductById(id) {
   return instance.get(`${prefix}/${id}`)
 }
+
+export function searchProduct(query) {
+  return instance.get(`${prefix}/search?${query}`)
+}

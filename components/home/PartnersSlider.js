@@ -7,8 +7,6 @@ export default function PartnersSlider() {
   return (
     <div className='partners'>
       <Swiper
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         modules={[Navigation, Pagination, Autoplay]}
         pagination={true}
         centeredSlides={false}

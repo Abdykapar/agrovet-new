@@ -1,13 +1,42 @@
-import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Search from '../../public/icons/search.svg'
 import Info from '../../public/icons/info.svg'
 import FileList from '../../public/icons/file-list.svg'
 import Location from '../../public/icons/location.svg'
 import Phone from '../../public/icons/phone.svg'
+import { useDebounce } from 'helpers/hooks'
+import { searchProduct } from 'services/products.service'
 
 export default function MainSection() {
+  const [search, setSearch] = useState('')
+  const [isShowSearchResult, setIsShowSearchResult] = useState(false)
+  const debouncedSearch = useDebounce(search, 500)
+  const [items, setItems] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await searchProduct(`s=${search}`)
+      setItems(res.items)
+    }
+    if (debouncedSearch) fetchData()
+  }, [debouncedSearch])
+
+  useEffect(() => {
+    window.addEventListener('click', outsideClick)
+
+    return () => {
+      window.removeEventListener('click', outsideClick)
+    }
+  }, [])
+
+  const outsideClick = (e) => {
+    const input = document.getElementById('ipt')
+    if (e.target.closest('#ipt') !== input) {
+      setIsShowSearchResult(false)
+    } else setIsShowSearchResult(true)
+  }
+
   return (
     <MainWrapper>
       <Img src='/images/home-main.png' />
@@ -20,9 +49,27 @@ export default function MainSection() {
               вашего скота и урожая
             </P>
             <Form>
-              <InputWrapper>
+              <InputWrapper id='ipt'>
                 <Search />
-                <Input placeholder='Название продукции или состава' />
+                <Input
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder='Название продукции или состава'
+                />
+
+                <DropdownWrapper active={isShowSearchResult}>
+                  <ul>
+                    {items.map((i) => (
+                      <li key={i._id}>
+                        <a
+                          href={`/${i.category?.parent?.title}/${i.category._id}/${i._id}`}
+                        >
+                          {i.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </DropdownWrapper>
               </InputWrapper>
               <Button>Искать</Button>
             </Form>
@@ -75,6 +122,39 @@ const MainWrapper = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+  }
+`
+
+const DropdownWrapper = styled.div`
+  ${({ active }) => (active ? 'display: block;' : 'display: none;')}
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 76px;
+  background-color: #fff;
+
+  ul {
+  }
+
+  li {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 10px 30px;
+    border-bottom: 1px solid #e2e2e2;
+    cursor: pointer;
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: #f9f4f4;
+    }
   }
 `
 

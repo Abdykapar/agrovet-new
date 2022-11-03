@@ -233,6 +233,10 @@ const Button = styled.a`
     }
   }
 
+  @media screen and (max-width: 380px) {
+    width: 100%;
+  }
+
   &:hover {
     opacity: 0.8;
   }

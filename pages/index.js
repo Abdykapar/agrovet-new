@@ -5,6 +5,7 @@ import Contacts from '@/components/home/Contacts'
 import MainSection from '@/components/home/MainSection'
 import OurLocations from '@/components/home/OurLocations'
 import OurPartners from '@/components/home/OurPartners'
+import PageLayout from '@/components/layouts/PageLayout'
 import { getImageUrl } from 'helpers/helpers'
 import { getAddresses } from 'services/address.service'
 import { getParentCategories } from 'services/categories.service'
@@ -12,7 +13,7 @@ import Header from '../components/Header'
 
 export default function Home({ data, contacts, error }) {
   return (
-    <div>
+    <PageLayout>
       <Header data={data} />
       <MainSection />
       <AboutUs />
@@ -21,7 +22,7 @@ export default function Home({ data, contacts, error }) {
       <OurLocations />
       <Contacts data={contacts} />
       <Footer />
-    </div>
+    </PageLayout>
   )
 }
 

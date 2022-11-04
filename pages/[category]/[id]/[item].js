@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import PageLayout from '@/components/layouts/PageLayout'
 import { getImageUrl } from 'helpers/helpers'
 import React from 'react'
 import {
@@ -69,7 +70,7 @@ export default function agrariaItem({
     }
   }
   return (
-    <>
+    <PageLayout title={`${category} - ${subCategory} - ${product.title}`}>
       <Header data={categories} />
       <div className='container mx-auto px-5'>
         <h2 className='sub-title mt-[50px] mb-[30px] lg:mt-[117px] lg:mb-[80px]'>
@@ -99,7 +100,7 @@ export default function agrariaItem({
         </WrapperDesc>
       </div>
       <Footer />
-    </>
+    </PageLayout>
   )
 }
 

@@ -63,6 +63,7 @@ const Profile = styled.div`
   background: #146c4a;
   ${({ image }) => image && `background-image: url('${image}');`}
   background-size: cover;
+  background-position: center;
 `
 
 const Info = styled.div`

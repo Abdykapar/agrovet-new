@@ -7,12 +7,14 @@ import Location from '../../public/icons/location.svg'
 import Phone from '../../public/icons/phone.svg'
 import { useDebounce } from 'helpers/hooks'
 import { searchProduct } from 'services/products.service'
+import { useRouter } from 'next/router'
 
 export default function MainSection() {
   const [search, setSearch] = useState('')
   const [isShowSearchResult, setIsShowSearchResult] = useState(false)
   const debouncedSearch = useDebounce(search, 500)
   const [items, setItems] = useState([])
+  const router = useRouter()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +39,11 @@ export default function MainSection() {
     } else setIsShowSearchResult(true)
   }
 
+  const onSearch = (e) => {
+    e.preventDefault()
+    router.push(`/search-results?q=${search}`)
+  }
+
   return (
     <MainWrapper>
       <Img src='/images/home-main.png' />
@@ -48,7 +55,7 @@ export default function MainSection() {
               <br />
               вашего скота и урожая
             </P>
-            <Form>
+            <Form onSubmit={onSearch}>
               <InputWrapper id='ipt'>
                 <Search />
                 <Input

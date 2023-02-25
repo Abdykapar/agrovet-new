@@ -43,8 +43,8 @@ export default function index({ data, category, categories }) {
         </h2>
 
         <Wrapper>
-          {data.map((i) => (
-            <Item key={i.title} href={`${i.link}`}>
+          {data.map((i, k) => (
+            <Item key={k} href={`${i.link}`}>
               <ImgWrapper>
                 <Img src={`${i.image}`} width={263} height={295} />
               </ImgWrapper>

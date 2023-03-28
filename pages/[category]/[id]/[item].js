@@ -84,7 +84,7 @@ export default function agrariaItem({
               <Title>{product.title}</Title>
               {getProductDesc(product)}
             </div>
-            <Button href='https://wa.me/+996-552-180305' target='_blank'>
+            <Button href='https://wa.me/+996706309955' target='_blank'>
               <img src='/icons/whatsapp.svg' />
               Получить консультацию
             </Button>

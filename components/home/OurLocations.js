@@ -8,9 +8,15 @@ export default function OurLocations() {
         наши филиалы
       </h2>
 
-      <MapWrapper className='ml-10'>
-        <img className='big' src='icons/map.svg' />
-        <img className='small' src='icons/map-small.svg' />
+      <MapWrapper>
+        {/* <img className='big' src='icons/map.svg' />
+        <img className='small' src='icons/map-small.svg' /> */}
+        <iframe
+          src='https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=136147304808'
+          width='100%'
+          height='400'
+          frameborder='0'
+        ></iframe>
       </MapWrapper>
     </div>
   )

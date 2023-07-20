@@ -10,6 +10,7 @@ import { getImageUrl } from 'helpers/helpers'
 import { getAddresses } from 'services/address.service'
 import { getParentCategories } from 'services/categories.service'
 import Header from '../components/Header'
+import News from '@/components/home/News'
 
 export default function Home({ data, contacts, error }) {
   return (
@@ -18,6 +19,7 @@ export default function Home({ data, contacts, error }) {
       <MainSection />
       <AboutUs />
       <Catalog data={data} />
+      <News />
       <OurPartners />
       <OurLocations />
       <Contacts data={contacts} />

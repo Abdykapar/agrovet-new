@@ -19,7 +19,7 @@ export default function Home({ data, contacts, error }) {
       <MainSection />
       <AboutUs />
       <Catalog data={data} />
-      <News />
+      {/* <News /> */}
       <OurPartners />
       <OurLocations />
       <Contacts data={contacts} />

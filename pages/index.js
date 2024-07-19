@@ -32,28 +32,30 @@ export async function getServerSideProps() {
   let data = [],
     contacts = []
   try {
-    const res = await Promise.all([getParentCategories(), getAddresses()])
-    data = res[0]
-    contacts = res[1]
+    // const res = await Promise.all([getParentCategories(), getAddresses()])
+    // console.log('res', res)
+    // data = res[0]
+    // contacts = res[1]
   } catch (err) {
+    console.log('err', err)
     return {
       props: {
-        data: [],
-        contacts,
-      },
-      error: err,
+        error: err,
+      }
     }
   }
   return {
     props: {
-      data: data.map((i) => ({
-        ...i,
-        image: getImageUrl(i.image),
-      })),
-      contacts: contacts.map((i) => ({
-        ...i,
-        image: getImageUrl(i.image),
-      })),
+      data: [],
+      contacts: []
+      // data: data.map((i) => ({
+      //   ...i,
+      //   image: getImageUrl(i.image),
+      // })),
+      // contacts: contacts.map((i) => ({
+      //   ...i,
+      //   image: getImageUrl(i.image),
+      // })),
     },
   }
 }
